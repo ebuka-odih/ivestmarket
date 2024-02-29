@@ -6,6 +6,16 @@
             </a>
         </div>
 
+        <div>
+
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                }
+            </script>
+        </div>
+        <div id="google_translate_element"></div>
+
         <nav role="navigation" class="nav-menu w-nav-menu">
             <a href="{{ route('login') }}" target="_blank" class="nav-link light-text w-nav-link">Login</a>
             <a href="{{ route('register') }}" target="_blank" class="nav-end-link w-nav-link">Sign up <span class="right-arrow-white">&gt;</span>
@@ -16,3 +26,5 @@
         </div>
     </div>
 </div>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

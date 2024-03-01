@@ -44,12 +44,6 @@ class DepositController extends Controller
             $deposit->amount = $request->amount;
             $deposit->payment_method_id = $request->payment_method_id;
             $deposit->save();
-
-//            $wallet = new Wallet();
-//            $wallet->user_id = Auth::id();
-//            $wallet->name = $deposit->payment_method->name;
-//            $wallet->value = $deposit->amount;
-//            $wallet->save();
             Mail::to($deposit->user->email)->send(new DepositAlert($deposit));
             return redirect()->route('user.payment', $deposit->id);
         }
@@ -80,7 +74,7 @@ class DepositController extends Controller
             $id = $request->deposit_id;
             $deposit = Deposit::findOrFail($id);
             $deposit->update(['reference' => $input['imagename'] ]);
-            Mail::to('admin@scalpstationspro.co')->send(new AdminDepositAlert($deposit));
+            Mail::to('admin@ivestmarket.com')->send(new AdminDepositAlert($deposit));
             return redirect()->back()->with('success', "Transaction Sent, Awaiting Approval ");
         }
         return redirect()->back()->with('declined', "Please Upload Your Payment Screenshot ");

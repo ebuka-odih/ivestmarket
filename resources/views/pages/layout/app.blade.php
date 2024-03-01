@@ -174,8 +174,8 @@
                 <a href="{{ route('login') }}" class="footer-link-light _5em-bottom-margin">Help Centre</a>
 
                 <a href="mailto:support@bitcoincoinmarketgrant.com" class="footer-link-light _5em-bottom-margin">Contact Us</a>
-                <p style="margin-bottom: 5px"> Email: <a style="color: white" href="mailto:support@bitcoincoinmarketgrant.com" class="footer-link-light _5em-bottom-margin">support@bitcoincoinmarketgrant.com</a></p>
-                <p style="margin-bottom: 5px"> phone Number: <a style="color: white"  class="footer-link-light _5em-bottom-margin">+1 718-814-3801</a></p>
+                <p style="margin-bottom: 5px"> Email: <a style="color: white" href="mailto:support@ivestmarket.com" class="footer-link-light _5em-bottom-margin">support@ivestmarket.com</a></p>
+{{--                <p style="margin-bottom: 5px"> phone Number: <a style="color: white"  class="footer-link-light _5em-bottom-margin">+1 718-814-3801</a></p>--}}
                 <p style="margin: 5px 5px; color: white">Address: Head Office <br>
                     405 Lexington Avenue, New York City, NY, 10174
                 </p>
@@ -197,18 +197,6 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script>
 <![endif]-->
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/65a1836d0ff6374032bf8b54/1hjveiq54';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+
 </body>
 </html>

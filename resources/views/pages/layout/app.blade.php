@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. https://www.webflow.com -->
-<!-- Last Published: Tue Dec 13 2022 22:06:43 GMT+0000 (Coordinated Universal Time) -->
+
 <html data-wf-domain="www.tradezella.com" data-wf-page="630df394ff44d447f84df573" data-wf-site="630df394ff44d46a174df570">
 <head>
     <meta charset="utf-8" />
@@ -91,6 +90,7 @@
 
    {{-- <script src="//code.jivosite.com/widget/EbNocRDA2z" async></script> --}}
 
+    <script src="//code.jivosite.com/widget/yfFDDSthj4" async></script>
 
 </head>
 <body>

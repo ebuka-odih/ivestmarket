@@ -73,7 +73,6 @@
                             <!-- /.box-header -->
                             <form class="form">
                                 <div class="box-body">
-                                    <p class="text-danger">Make payment to the wallet below</p>
                                     <hr class="my-15">
                                     <div class="row">
                                         <div class="col-md-12 col-12">
@@ -136,14 +135,15 @@
                 <form action="{{ route('user.processPayment') }}" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                         @csrf
-                        
+
                     @method('PATCH')
                     <div class="row">
                         <div class="col-lg-12">
                         <label for="" class="text-white">Select Payment Screenshot</label>
                         <input type="hidden" name="deposit_id" value="{{ $deposit->id }}">
-                        <input name="reference" type="file" class="form-control-file">                            </div>
-                    =</div>
+                        <input name="reference" type="text" class="form-control-file">
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer modal-footer-uniform">

@@ -56,7 +56,7 @@
                                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                     @endforeach
                                                 </select>
-                                                <p class="text-danger">Please select a deposit method</p>
+
                                             </div>
                                         </div>
                                     </div>

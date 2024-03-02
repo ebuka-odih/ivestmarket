@@ -139,7 +139,7 @@
                     @method('PATCH')
                     <div class="row">
                         <div class="col-lg-12">
-                        <label for="" class="text-white">Select Payment Screenshot</label>
+                        <label for="" class="text-white">Enter transaction ID (TxId)</label>
                         <input type="hidden" name="deposit_id" value="{{ $deposit->id }}">
                         <input name="reference" type="text" class="form-control-file">
                         </div>

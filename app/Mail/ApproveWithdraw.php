@@ -30,7 +30,7 @@ class ApproveWithdraw extends Mailable
     public function build()
     {
         return $this->markdown('emails.approve_withdraw')
-            ->subject('Scalpstats')
-            ->from('noreply@Scalpstats.co');
+            ->subject(env('APP_NAME'))
+            ->from(env('MAIL_FROM_ADDRESS'));
     }
 }

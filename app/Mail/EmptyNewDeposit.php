@@ -30,7 +30,7 @@ class EmptyNewDeposit extends Mailable
     public function build()
     {
         return $this->markdown('emails.empty_new_deposit')
-            ->from('noreply@Scalpstats.co', "Scalpstats")
-            ->subject('New Deposit '.$this->data['deposit']->transId());
+            ->subject(env('APP_NAME'))
+            ->from(env('MAIL_FROM_ADDRESS'));
     }
 }

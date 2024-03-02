@@ -30,7 +30,7 @@ class AdminDepositAlert extends Mailable
     public function build()
     {
         return $this->markdown('emails.admin-deposit-alert')
-            ->subject('Scalpstats')
-            ->from('noreply@scalpstats.co');
+            ->subject(env('APP_NAME'))
+            ->from(env('MAIL_FROM_ADDRESS'));
     }
 }

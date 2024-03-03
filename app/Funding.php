@@ -17,9 +17,9 @@ class Funding extends Model
     {
         if ($this->type == "Main-Deposit")
         {
-            return "Main-Deposit";
-        }elseif ($this->type == "Referral-Bonus" || $this->type == "Bonus"){
-            return "Referral-Bonus";
+            return "Main-Balance";
+        }elseif ($this->type == "Bonus"){
+            return "Bonus";
         }
         return "Profit";
     }

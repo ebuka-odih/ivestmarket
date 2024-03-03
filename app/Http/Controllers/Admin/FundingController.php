@@ -15,28 +15,29 @@ class FundingController extends Controller
     public function fund()
     {
         $users = User::all();
-        return view('admin.user.add-fund', compact('users'));
+        $funding = Funding::all();
+        return view('admin.user.add-fund', compact('users', 'funding'));
     }
+
     public function sendFund(Request $request)
     {
         $data = $this->getData($request);
         $data['user_id'] = $request->user_id;
         $data['status'] = 1;
         $data = Funding::create($data);
-        if ($data['type'] == 'Referral-Bonus'){
-            $user = User::findOrFail($data->user_id);
+        $user = User::findOrFail($data->user_id);
+
+        if ($data['type'] == 'Bonus'){
             $user->ref_bonus += $request->amount;
-            $user->balance += $request->amount;
             $user->save();
         }elseif($data['type'] == 'Main-Deposit'){
-            $user = User::findOrFail($data->user_id);
             $user->balance += $request->amount;
             $user->save();
         }
-        $user = User::findOrFail($data->user_id);
-        $user->balance += $request->amount;
-        $user->profit += $request->amount;
-        $user->save();
+        elseif($data['type'] == 'Profit'){
+            $user->profit += $request->amount;
+            $user->save();
+        }
         Mail::to($user->email)->send(new FundingMail($data));
         return redirect()->back()->with('success', "Fund sent successfully");
     }

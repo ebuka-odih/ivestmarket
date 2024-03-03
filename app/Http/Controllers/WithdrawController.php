@@ -34,8 +34,8 @@ class WithdrawController extends Controller
             'source' => 'required',
         ]);
         $withdraw = new Withdraw();
-        if ($request->amount < \auth()->user()->balance){
-            if ($request->amount >= 100){
+        if ($request->amount < \auth()->user()->balance || $request->amount < \auth()->user()->profit){
+            if ($request->amount >= 50){
                 $withdraw->amount = $request->amount;
                 $withdraw->user_id = Auth::id();
                 $withdraw->wallet_address = $request->wallet_address;
@@ -47,9 +47,9 @@ class WithdrawController extends Controller
                 Mail::to('admin@ivestmarket.com')->send( new AdminWithdrawAlert($data));
                 return redirect()->route('user.success', $withdraw->id)->with('success_message', 'Your withdrawal request has been sent successfully, awaiting approval');
             }
-            return redirect()->back()->with('nop', "You can't withdraw less than 200 USD");
+            return redirect()->back()->with('nop', "You can't withdraw less than 50 USD");
         }
-        return redirect()->back()->with('low_balance', "You can't withdraw less than 200 USD");
+        return redirect()->back()->with('low_balance', "Insufficient Balance");
 
     }
 

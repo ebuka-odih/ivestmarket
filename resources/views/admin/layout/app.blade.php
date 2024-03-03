@@ -201,7 +201,7 @@
                     <li class="nav-main-item">
                         <a class="nav-main-link nav-main"  href="{{ route('admin.fundWallet') }}">
                             <i class="nav-main-link-icon fa fa-plus-circle"></i>
-                            <span class="nav-main-link-name">Fund Wallet</span>
+                            <span class="nav-main-link-name">Fund Crypto Wallet</span>
                         </a>
                     </li>
 

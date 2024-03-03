@@ -56,10 +56,9 @@
                                     <label class="form-label"  for="example-email-input">Type of Fund</label>
                                     <select name="type" id="" class="form-control ">
                                         <option disabled selected>Select </option>
-                                        <option value="Main-Deposit">Main-Deposit</option>
+                                        <option value="Main-Balance">Main-Deposit</option>
                                         <option value="Bonus">Bonus</option>
                                         <option value="Profit">Profit</option>
-                                        <option value="Referral-Bonus">Referral Bonus</option>
                                         {{--                                        <option value="Profit">Profit</option>--}}
                                     </select>
                                 </div>
@@ -81,6 +80,25 @@
 
 
                     </form>
+
+                    <br>
+                    <hr>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Date</th>
+                            <th>User</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                        </tr>
+                        @foreach($funding as $item)
+                        <tr>
+                            <td>{{ date('Y-m-d', strtotime($item->created_at)) }}</td>
+                            <td>{{ $item->user->name }}</td>
+                            <td>{{ $item->fund_type() }}</td>
+                            <td>$@convert($item->amount)</td>
+                        </tr>
+                        @endforeach
+                    </table>
                 </div>
             </div>
             <!-- END Elements -->

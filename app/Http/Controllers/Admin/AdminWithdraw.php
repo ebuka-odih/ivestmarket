@@ -25,12 +25,16 @@ class AdminWithdraw extends Controller
         if ($withdraw->source == "Main-Bal"){
             $user->balance -= $withdraw->amount;
             $user->save();
+            $withdraw->save();
+            Mail::to($user->email)->send(new ApproveWithdraw($withdraw));
+            return redirect()->route('admin.withdrawal')->with('success', "Withdrawal Approved Successfully");
         }
         $user->profit -= $withdraw->amount;
         $user->save();
         $withdraw->save();
         Mail::to($user->email)->send(new ApproveWithdraw($withdraw));
         return redirect()->route('admin.withdrawal')->with('success', "Withdrawal Approved Successfully");
+
     }
 
     public function delete_withdrawal($id)

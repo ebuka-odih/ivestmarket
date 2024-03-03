@@ -55,27 +55,7 @@
 
                                         <form action="{{ route('admin.withdrawPercent', $with->id) }}" method="POST">
                                             @csrf
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <label for="">Select Percent</label>
-                                                    <select name="percent" id="" class="form-control">
-                                                        <option value="10">10%</option>
-                                                        <option value="20">20%</option>
-                                                        <option value="30">30%</option>
-                                                        <option value="40">40%</option>
-                                                        <option value="50">50%</option>
-                                                        <option value="60">60%</option>
-                                                        <option value="70">70%</option>
-                                                        <option value="80">80%</option>
-                                                        <option value="90">90%</option>
-                                                        <option value="100">100%</option>
-                                                    </select>
-                                                </div>
-                                            </div>
                                             <div class="row mt-3">
-                                                <div class="col-lg-6">
-                                                    <button type="submit" class="btn btn-primary col-lg-6 mt-2">Update</button>
-                                                </div>
                                                 <div class="col-lg-6">
                                                     <a href="{{ route('admin.approve_withdrawal', $with->id) }}" class="btn btn-success">Approve</a>
                                                 </div>

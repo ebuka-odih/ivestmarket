@@ -45,7 +45,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Amount</th>
                                                 {{--                                            <th class="d-none d-sm-table-cell sorting"  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Payment Detail</th>--}}
                                                 <th  class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Status</th>
-                                                <th  class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Progress</th>
+                                                <th  class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Source</th>
                                                 <th  class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Action</th>
                                             </tr>
                                             </thead>
@@ -57,7 +57,7 @@
                                                     <td class="fw-semibold">$ {{ $item->amount }}</td>
                                                     {{--                                                <td class="d-none d-sm-table-cell"> {{ $item->withdraw_method->acctLabel() }}</td>--}}
                                                     <td class="d-none d-sm-table-cell"> {!! $item->adminStatus() !!}</td>
-                                                    <td class="d-none d-sm-table-cell text-success"> {{ $item->percent }}%</td>
+                                                    <td class="d-none d-sm-table-cell"> {{ $item->source() }}</td>
                                                     <td>
                                                         @if($item->status == 0)
                                                             <a href="{{ route('admin.withdrawDetails', $item->id) }}" class="btn btn-sm btn-primary push" >Action</a>

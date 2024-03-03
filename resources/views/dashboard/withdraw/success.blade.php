@@ -15,8 +15,6 @@
                                 <div class="mt-20">
                                     <h6 class="text-uppercase fw-500 text-black">Withdrawal Sent Successfully, Awaiting Approval!</h6>
                                     <p>Your withdrawal requested amount will be sent to your wallet once confirmed</p>
-                                    <br>
-                                    <h4>Withdrawal Progress: <span class="text-danger">{{ $withdraw->percent }}%</span></h4>
                                     <hr>
                                     <a href="{{ route('user.withdraw') }}" class="btn btn-primary">Withdrawal Again</a>
                                 </div>

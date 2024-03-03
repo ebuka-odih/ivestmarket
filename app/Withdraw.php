@@ -44,14 +44,14 @@ class Withdraw extends Model
     {
         return "#TNX43265".$this->id;
     }
-    public function showBTCRate()
+
+    public function source()
     {
-        $btc =  Currency::convert()
-            ->from('USD')
-            ->to('BTC')
-            ->source('crypto')
-            ->round(7)
-            ->get();
-        return $btc * $this->amount;
+        if ($this->source == 'Main-Bal')
+        {
+            return "Main Bal";
+        }
+        return "Profit Bal";
     }
+
 }

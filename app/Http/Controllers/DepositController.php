@@ -65,17 +65,23 @@ class DepositController extends Controller
                 'reference' => 'required',
             ]
         );
-        if ($request->hasFile('reference')){
+        if ($request->reference){
 
             $id = $request->deposit_id;
             $deposit = Deposit::findOrFail($id);
             $deposit->reference = $request->reference;
             $deposit->save();
             Mail::to('admin@ivestmarket.com')->send(new AdminDepositAlert($deposit));
-            return redirect()->back()->with('success', "Transaction Sent, Awaiting Approval ");
+            return redirect()->route('user.depositNotice', $deposit->id)->with('success', "Transaction Sent, Awaiting Approval ");
         }
         return redirect()->back()->with('declined', "Please enter transaction id TxiD ");
 
+    }
+
+    public function depositNotice($id)
+    {
+        $deposit = Deposit::findOrFail($id);
+        return view('dashboard.deposit.notice', compact('deposit'));
     }
 
     public function cancelDeposit($id)

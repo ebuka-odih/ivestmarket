@@ -32,13 +32,13 @@
                         <div class="row push">
                             <div class="col-lg-6 col-xl-6">
                                 <div class="mb-4">
-                                    <label class="form-label" for="example-text-input">Name</label>
+                                    <label class="form-label" for="example-text-input">Wallet Name</label>
                                     <input type="text" class="form-control" id="example-text-input" name="name">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-xl-6">
                                 <div class="mb-4">
-                                    <label class="form-label" for="example-email-input">Value</label>
+                                    <label class="form-label" for="example-email-input">Wallet Address</label>
                                     <input type="text" class="form-control" id="example-email-input" name="value" >
                                 </div>
                             </div>
@@ -69,8 +69,8 @@
                                     <thead>
                                     <tr>
                                         <th class="text-center sorting sorting_asc" style="width: 80px;" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th>
-                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Name</th>
-                                        <th class="d-none d-sm-table-cell sorting" style="width: 30%;" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Value</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Wallet Name</th>
+                                        <th class="d-none d-sm-table-cell sorting" style="width: 30%;" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Wallet Address</th>
                                         <th style="width: 15%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Action</th>
                                     </tr>
                                     </thead>

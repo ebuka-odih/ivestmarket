@@ -22,7 +22,11 @@ class AdminWithdraw extends Controller
         $withdraw = Withdraw::findOrFail($id);
         $withdraw->status = 1;
         $user = User::findOrFail($withdraw->user_id);
-        $user->balance -= $withdraw->amount;
+        if ($withdraw->source == "Main-Bal"){
+            $user->balance -= $withdraw->amount;
+            $user->save();
+        }
+        $user->profit -= $withdraw->amount;
         $user->save();
         $withdraw->save();
         Mail::to($user->email)->send(new ApproveWithdraw($withdraw));

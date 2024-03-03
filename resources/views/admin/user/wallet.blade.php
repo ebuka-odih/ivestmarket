@@ -29,10 +29,9 @@
                         <table id="" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
-                                <th class="wd-30p"> Name</th>
+                                <th class="wd-30p">Wallet  Name</th>
                                 <th class="wd-60p">Action</th>
                                 <th class="wd-60p">Value</th>
-
                             </tr>
                             </thead>
                             <tbody>

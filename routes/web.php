@@ -41,7 +41,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::post('process/deposit', "DepositController@processDeposit")->name('processDeposit');
     Route::get('deposit/payment/QH5H3Q64{id}2GER', "DepositController@payment")->name('payment');
     Route::patch('process/payment/QH5H3Q642GER', "DepositController@processPayment")->name('processPayment');
-    Route::get('cancelled/deposit/XCRTRD{id}ERTX8F&', "DepositController@cancelDeposit")->name('cancelDeposit');
+    Route::get('deposit/notice/XCRTRD{id}ERTX8F&', "DepositController@depositNotice")->name('depositNotice');
 
     //Withdrawal Routes
     Route::get('withdraw/transactions', "WithdrawController@transactions")->name('withdraw.transactions');

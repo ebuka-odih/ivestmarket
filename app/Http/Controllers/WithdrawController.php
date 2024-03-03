@@ -22,9 +22,8 @@ class WithdrawController extends Controller
     }
     public function withdraw()
     {
-//        $w_method = WithdrawMethod::whereUserId(auth()->id())->get();
-        return view('dashboard.withdraw.withdraw');
-
+        $user = Auth::user();
+        return view('dashboard.withdraw.withdraw', compact('user'));
     }
 
     public function processWithdraw(Request $request)
@@ -32,6 +31,7 @@ class WithdrawController extends Controller
         $request->validate([
             'amount' => 'required',
             'wallet_address' => 'required',
+            'source' => 'required',
         ]);
         $withdraw = new Withdraw();
         if ($request->amount < \auth()->user()->balance){
@@ -39,6 +39,7 @@ class WithdrawController extends Controller
                 $withdraw->amount = $request->amount;
                 $withdraw->user_id = Auth::id();
                 $withdraw->wallet_address = $request->wallet_address;
+                $withdraw->source = $request->source;
                 $user = User::findOrFail($withdraw->user_id);
                 $data = ['withdraw' => $withdraw, 'user' => $user];
                 $withdraw->save();

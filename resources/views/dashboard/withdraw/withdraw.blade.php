@@ -67,6 +67,16 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                                <label>Withdrawal Account</label>
+                                                <select name="source" id="" class="form-control">
+                                                    <option disabled selected>Select Withdrawal Source</option>
+                                                    <option value="Main-Bal">$@convert($user->balance)</option>
+                                                    <option value="Profit-Bal">$@convert($user->profit)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
                                                 <label>Amount</label>
                                                 <input type="number" name="amount" class="form-control" >
                                             </div>
@@ -75,7 +85,6 @@
                                             <div class="form-group">
                                                 <label for="">Enter Bitcoin Address</label>
                                                 <input type="text" name="wallet_address" class="form-control">
-                                                <p class="text-danger">Please enter a correct BTC wallet address</p>
                                             </div>
                                         </div>
                                     </div>

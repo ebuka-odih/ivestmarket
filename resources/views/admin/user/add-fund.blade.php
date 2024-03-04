@@ -56,7 +56,7 @@
                                     <label class="form-label"  for="example-email-input">Type of Fund</label>
                                     <select name="type" id="" class="form-control ">
                                         <option disabled selected>Select </option>
-                                        <option value="Main-Balance">Main-Deposit</option>
+                                        <option value="Main-Balance">Main-Balance</option>
                                         <option value="Bonus">Bonus</option>
                                         <option value="Profit">Profit</option>
                                         {{--                                        <option value="Profit">Profit</option>--}}

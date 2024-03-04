@@ -30,7 +30,7 @@ class FundingController extends Controller
         if ($data['type'] == 'Bonus'){
             $user->ref_bonus += $request->amount;
             $user->save();
-        }elseif($data['type'] == 'Main-Deposit'){
+        }elseif($data['type'] == 'Main-Balance'){
             $user->balance += $request->amount;
             $user->save();
         }

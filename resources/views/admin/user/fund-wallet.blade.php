@@ -53,7 +53,7 @@
                             @foreach($balance as $item)
                             <tr>
                                 <td>{{ date('d-M-Y', strtotime($item->created_at)) }}</td>
-                                <td>{{ $item->user->fullname() }}</td>
+                                <td>{{ optional($item->user)->fullname() }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>${{ $item->value }}</td>
                                 <td><a href="" class=""></a></td>

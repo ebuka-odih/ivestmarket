@@ -29,7 +29,7 @@ class AdminDepositAlert extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.admin-deposit-alert')
+        return $this->view('emails.admin-deposit-alert')
             ->subject(env('APP_NAME'))
             ->from(env('MAIL_FROM_ADDRESS'));
     }

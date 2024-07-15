@@ -44,7 +44,7 @@ class DepositController extends Controller
             $deposit->amount = $request->amount;
             $deposit->payment_method_id = $request->payment_method_id;
             $deposit->save();
-            Mail::to($deposit->user->email)->send(new DepositAlert($deposit));
+//            Mail::to($deposit->user->email)->send(new DepositAlert($deposit));
             return redirect()->route('user.payment', $deposit->id);
         }
         return redirect()->back()->with('declined', "You can only deposit 50 USD and above");
@@ -71,7 +71,7 @@ class DepositController extends Controller
             $deposit = Deposit::findOrFail($id);
             $deposit->reference = $request->reference;
             $deposit->save();
-            Mail::to('admin@ivestmarket.com')->send(new AdminDepositAlert($deposit));
+//            Mail::to('admin@ivestmarket.com')->send(new AdminDepositAlert($deposit));
             return redirect()->route('user.depositNotice', $deposit->id)->with('success', "Transaction Sent, Awaiting Approval ");
         }
         return redirect()->back()->with('declined', "Please enter transaction id TxiD ");

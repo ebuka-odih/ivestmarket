@@ -71,7 +71,7 @@ class DepositController extends Controller
             $deposit = Deposit::findOrFail($id);
             $deposit->reference = $request->reference;
             $deposit->save();
-            Mail::to('admin@ivestmarket.com')->send(new AdminDepositAlert($deposit));
+            Mail::to(env('MAIL_FROM_ADDRESS'))->send(new AdminDepositAlert($deposit));
             return redirect()->route('user.depositNotice', $deposit->id)->with('success', "Transaction Sent, Awaiting Approval ");
         }
         return redirect()->back()->with('declined', "Please enter transaction id TxiD ");
